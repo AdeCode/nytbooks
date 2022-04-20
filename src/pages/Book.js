@@ -25,14 +25,19 @@ function Book() {
     <div className='content'>
         {loading ? 
             // <h2>Loading books...</h2>
-            <Loader type="spinner-default" bgColor={"#00008B"} title={"spinner-default"} color={'#FFFFFF'} size={80} />
+            <div className='loader'>
+                <Loader type="spinner-default" bgColor={"#00008B"} title={"Loading..."} color={'#FFFFFF'} size={80} />
+            </div>
             :
             <div className='container'>
                 {books.map(book => (
-                    <BookCard
+                    <BookCard                        
+                        image={book.book_image}
                         title={book.title}
                         author={book.author}
-                        image={book.book_image}
+                        key={book.rank}
+                        rank={book.rank}
+
                     />
                     // <div>
                     //     <h5>Title: {book.title}</h5>

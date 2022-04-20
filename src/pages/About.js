@@ -17,7 +17,9 @@ function About() {
   return (
     <div className='content'>
         {loading ? 
-            <Loader type="spinner-default" bgColor={"#00008B"} title={"spinner-default"} color={'#FFFFFF'} size={100} />
+            <div className='loader'>
+                <Loader type="spinner-default" bgColor={"#00008B"} title={"Loading..."} color={'#FFFFFF'} size={100} />
+            </div>
         :
             <h2>About the app</h2>
         }

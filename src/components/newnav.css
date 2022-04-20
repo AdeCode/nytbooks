@@ -52,7 +52,7 @@
 
 
 .nav-options a{
-    color: yellow;    
+    color: aliceblue;    
 }
 
 .signin-up{
@@ -110,9 +110,9 @@ ul a{
     }
 
     .nav-options.active{
-        background: #9899d1;
+        background: #23235c;
         left: 0;
-        opacity: 1;
+        opacity: 0.9;
         transition: all 0.5s ease;
         z-index: 1;
         align-content: center;
