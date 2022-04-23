@@ -5,6 +5,8 @@ import About from './pages/About';
 import Book from './pages/Book';
 import Home from './pages/Home';
 import NewNav from './components/NewNav';
+import BookInfo from './pages/BookInfo';
+import GenerateQR from './components/GenerateQR';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/books' element={<Book/>}/>
+          <Route path='/bookinfo/:rank' element={<BookInfo/>}/>
+          <Route path='/qr' element={<GenerateQR/>}/>
         </Routes>
       </Router>  
   );

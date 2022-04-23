@@ -5,6 +5,7 @@ import {FaFoursquare} from 'react-icons/fa'
 import './newnav.css'
 import { Link, NavLink } from 'react-router-dom'
 
+
 function NewNav() {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
@@ -30,6 +31,9 @@ function NewNav() {
                   </li>
                   <li className='option' onClick={closeMobileMenu}>
                     <NavLink to='/contact' activestyle>Contact</NavLink>
+                  </li>
+                  <li className='option' onClick={closeMobileMenu}>
+                    <NavLink to='/qr' activestyle>QR</NavLink>
                   </li>
                   <li className="option mobile-option" onClick={closeMobileMenu}>
                     <a href="#" className='link'>SIGN-IN</a>

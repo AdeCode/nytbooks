@@ -2,11 +2,13 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import BookCard from '../components/BookCard'
 import Loader from 'react-js-loader'
+import {useNavigate} from 'react-router-dom'
 
 function Book() {
   const [books, setBooks] = useState([])
   const [loading, setIsLoading] = useState(true)
   const key = '7exKAJ1VAViKPeQXK5MpK1VXHaXn25sP'
+  const navigate = useNavigate()
 
   useEffect(() => {
     getBooks()
@@ -21,6 +23,13 @@ function Book() {
         })
   }
   
+  const getBookInfo = (rank) => {
+    let selectedBook = books.filter(book => book.rank === rank)
+    console.log(selectedBook)
+    //navigate(`/bookinfo/${rank}`)
+    // history.pushState(`/bookinfo/${rank}`)
+  }
+
   return (
     <div className='content'>
         {loading ? 
@@ -30,19 +39,22 @@ function Book() {
             </div>
             :
             <div className='container'>
+              <div className='title'>
+                <h1>NEW YORK TIMES BOOKS</h1>
+              </div>
+              <div className='book-section'>
                 {books.map(book => (
-                    <BookCard                        
-                        image={book.book_image}
-                        title={book.title}
-                        author={book.author}
-                        key={book.rank}
-                        rank={book.rank}
-
-                    />
-                    // <div>
-                    //     <h5>Title: {book.title}</h5>
-                    // </div>
-                ))}
+                      <BookCard                        
+                          image={book.book_image}
+                          title={book.title}
+                          author={book.author}
+                          key={book.rank}
+                          rank={book.rank}
+                          getBookInfo={() => getBookInfo(book.rank)}
+                      />                   
+                  ))}
+              </div>
+                
             </div>
         }        
     </div>

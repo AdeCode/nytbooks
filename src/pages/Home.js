@@ -1,8 +1,12 @@
 import React from 'react'
+import GenerateQR from '../components/GenerateQR'
 
 function Home() {
   return (
-    <div className='content'>Home</div>
+    <div className='content'>
+      Home
+      <GenerateQR/>
+    </div>
   )
 }
 
