@@ -12,7 +12,8 @@ function FormInput(props) {
         <label>{label}</label>
         <input {...inputProps} 
             onChange={onChange} 
-            required onBlur={handleFocus} 
+            required 
+            onBlur={handleFocus} 
             focused={focused.toString()}
             onFocus={()=>inputProps.name==='confirmPassword' && setFocused(true) }
         />

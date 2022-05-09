@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Form from '../components/Form'
 import FormInput from '../components/FormInput'
 import '../components/forminput.css'
+import FormikForm from '../components/FormikForm'
 
 function Register() {
   const [formValues, setFormValues] = useState({
@@ -101,7 +102,10 @@ function Register() {
                 }            
                 <button>Submit</button>
             </form>
-        </div>        
+        </div>  
+        <div className='form-content-container' style={{marginTop:'20px'}}>
+            <FormikForm/>
+        </div>      
     </div>
   )
 }
