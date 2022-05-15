@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import NewNav from './components/NewNav';
 import BookInfo from './pages/BookInfo';
 import GenerateQR from './components/GenerateQR';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/books' element={<Book/>}/>
           <Route path='/bookinfo/:rank' element={<BookInfo/>}/>
           <Route path='/qr' element={<GenerateQR/>}/>
+          <Route path='/contact' element={<Register/>}/>
         </Routes>
       </Router>  
   );
